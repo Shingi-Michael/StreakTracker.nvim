@@ -20,10 +20,10 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
 {
-    "yourname/projectname.nvim",
+    "shingi-michael/streaktracker.nvim",
     dependencies = { "rcarriga/nvim-notify" }, -- if you want notifications
     config = function()
-        require("projectname").setup()
+        require("streak_plugin").setup()
     end,
 },
 ````
