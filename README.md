@@ -4,7 +4,7 @@ Streak Tracker.nvim - track your daily coding streak inside Neovim.
 
 ---
 
-## Features
+## ✨ Features
 - **Save streak data** -> Automatically stores your streak in a JSON file.
 - **Load streak data** -> Reads your progress everytime you open Neovim.
 - **Automatic updates** -> Increments streak daily on startup.
@@ -14,7 +14,7 @@ Streak Tracker.nvim - track your daily coding streak inside Neovim.
 
 ---
 
-## Installation
+## 📦 Installation
 
 Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 
@@ -25,11 +25,11 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
     config = function()
         require("projectname").setup()
     end,
-},
+},```
 
 ---
 
-## Configuration
+## ⚙️ Configuration
 
 StreakTracker works out of the box with sensible defaults, but you can customize its behavior:
 
@@ -42,7 +42,7 @@ require("streak_plugin").setup({
 {
     allow_reset = true,
     mode = "both", -- "startup", "activity", or both "both"
-},
+},```
 
 
 - allow_reset -> if false, the :StreakReset command will not be available.
