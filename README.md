@@ -32,11 +32,13 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 ## ⚙️ Configuration
 
 StreakTracker works out of the box with sensible defaults, but you can customize its behavior:
-        
+      
+```lua
 require("streak_plugin").setup({
     allow_reset = false,   -- disable the :StreakReset command
     mode = "activity",     -- only count streaks when saving files
 })
+````
 
 ```lua
 {
