@@ -23,10 +23,10 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
     "shingi-michael/streaktracker.nvim",
     dependencies = { "rcarriga/nvim-notify" }, -- if you want notifications
     config = function()
-        require("streak_plugin").setup()
+        require("streak").setup()
     end,
-},
-````
+}
+```
 ---
 
 ## ⚙️ Configuration
@@ -38,14 +38,14 @@ require("streak").setup({
     allow_reset = false,   -- disable the :StreakReset command
     mode = "activity",     -- only count streaks when saving files
 })
-````
+```
 
 ```lua
 {
     allow_reset = true,
     mode = "both", -- "startup", "activity", or both "both"
-},
-````
+}
+```
 
 - allow_reset -> if false, the :StreakReset command will not be available.
 - mode -> Controls when streak update:
@@ -53,4 +53,25 @@ require("streak").setup({
     - "activity" -> only when saving a file.
     - "both" -> updates on both startup and saves
 
+---
 
+## 🛠️ API / Statusline Integration
+
+You can easily display your current streak in a statusline (like `lualine.nvim`) by using the exposed `get_streak()` function.
+
+```lua
+-- Example for Lualine
+require('lualine').setup {
+  sections = {
+    lualine_x = {
+      {
+        function()
+          local streak = require("streak").get_streak()
+          return "🔥 " .. streak
+        end,
+        cond = function() return require("streak").get_streak() > 0 end,
+      }
+    }
+  }
+}
+```
